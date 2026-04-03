@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import api from '@/lib/api';
+import api from '../../../lib/api';
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -21,14 +21,14 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-sm border w-full max-w-sm space-y-4">
+      <form onSubmit={handleSubmit} className="bg-white text-black p-8 rounded-xl shadow-sm border w-full max-w-sm space-y-4">
         <h1 className="text-xl font-semibold">Create account</h1>
         {error && <p className="text-red-500 text-sm">{error}</p>}
-        <input className="w-full border rounded-lg px-3 py-2 text-sm" placeholder="Name"
+        <input className="text-black w-full border rounded-lg px-3 py-2 text-sm" placeholder="Name"
           value={form.name} onChange={e => setForm({...form, name: e.target.value})} />
-        <input className="w-full border rounded-lg px-3 py-2 text-sm" placeholder="Email" type="email"
+        <input className="text-black w-full border rounded-lg px-3 py-2 text-sm" placeholder="Email" type="email"
           value={form.email} onChange={e => setForm({...form, email: e.target.value})} />
-        <input className="w-full border rounded-lg px-3 py-2 text-sm" placeholder="Password" type="password"
+        <input className="text-black w-full border rounded-lg px-3 py-2 text-sm" placeholder="Password" type="password"
           value={form.password} onChange={e => setForm({...form, password: e.target.value})} />
         <button type="submit" className="w-full bg-black text-white rounded-lg py-2 text-sm font-medium">
           Register
